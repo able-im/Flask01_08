@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -13,26 +13,17 @@ def products():
     return "<h1>Product Page</h1>"
 
 
-@app.route("/products/<string:id>")
-def forth(id):
-    return "<h1>Product Detail Page - {{id}}</h1>"
+@app.route("/products/<int:id>")
+def product_detail(id):
+    return f"<h1>Product Detail Page for { id } </h1>"
 
 
-@app.route("/second")
-def second():
-    return "This is second page"
-
-
-@app.route("/third")
-def third():
-    return "This is third page"
-
-
-@app.route("/forth/<string:id>")
-def forth(id):
-    return f"Id of this page is {id}"
+@app.route("/example")
+def example():
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
-    #  app.run(debug=True)
+    # app.run(debug=True)
+    # app.run(debug=True, port=3003)
     app.run(host="0.0.0.0", port=80)
