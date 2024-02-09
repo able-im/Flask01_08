@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p><br><iframe src="http://clarusway.de/" height="600" width="800"></iframe>"
+    return '<p>Hello, World!</p><br><iframe src="http://clarusway.de/" height="600" width="800"></iframe>'
 
 
 @app.route("/products")
