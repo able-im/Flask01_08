@@ -5,7 +5,17 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return "<p>Hello, World!</p><br><iframe src="http://clarusway.de/" height="600" width="800"></iframe>"
+
+
+@app.route("/products")
+def products():
+    return "<h1>Product Page</h1>"
+
+
+@app.route("/products/<string:id>")
+def forth(id):
+    return "<h1>Product Detail Page - {{id}}</h1>"
 
 
 @app.route("/second")
